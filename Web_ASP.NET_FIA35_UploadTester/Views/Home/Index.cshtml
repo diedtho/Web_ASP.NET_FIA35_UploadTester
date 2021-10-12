@@ -1,0 +1,38 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Web_ASP.NET_FIA35_UploadTester.Models.Bild
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <h1 style="width:80%;margin:auto;background-color:forestgreen;padding:10px;border-radius:10px">Upload Tester</h1>
+
+    @*Bei Dateiupload: method="post" enctype="multipart/form-data" zwingend notwendig*@
+    <form asp-action="Index" method="post" enctype="multipart/form-data" style="width:80%;margin:auto;background-color:burlywood;padding:10px;border-radius:10px">
+        <label asp-for="notices" />
+        <br />
+        <textarea asp-for="notices"></textarea>
+        <br />
+        <label asp-for="file" />
+        <br />
+        <input asp-for="file" />
+        <br />
+        <button>Absenden</button>
+    </form>
+
+    <br />
+    @if (ViewBag.Dateiname != null)
+    {
+        <img src="/Uploads/@ViewBag.Dateiname" width="1*" />
+    }
+</body>
+</html>
