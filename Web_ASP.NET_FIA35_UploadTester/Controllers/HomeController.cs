@@ -15,7 +15,7 @@ namespace Web_ASP.NET_FIA35_UploadTester.Controllers
     public class HomeController : Controller
     {
         List<IFormFile> geposteteBilder = new();
-        List<string> allowedMimeTypes = new List<string>{ "image/png", "image/jpeg", "image/gif", "image/webp" };
+        List<string> allowedMimeTypes = new List<string> { "image/png", "image/jpeg", "image/gif", "image/webp" };
 
         IWebHostEnvironment config;
         public HomeController(IWebHostEnvironment conf)
